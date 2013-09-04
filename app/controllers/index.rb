@@ -32,8 +32,13 @@ get '/post/:id' do
   erb :post
 end
 
+get '/login' do
+  erb :login
+end
+
 
 
 # POST ======================================
 
-
+post '/login' do
+end

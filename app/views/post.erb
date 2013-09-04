@@ -5,8 +5,8 @@ title: <a href=<%=@post.url%>><%= @post_title %></a>
 <br>
 <h3>Comments</h3>
 <% @comments.each do |comment| %>
-  <a href='/user/<%= comment.user.id %>'><%= comment.user.username %></a>
+  <a href='/user/<%= comment.user.id %>'><%= comment.user.username %></a> <%= create_time_ago(comment.created_at)%>
   <br>
   <%= comment.text %>
-  <br>
+  <br><br>
 <% end %>
