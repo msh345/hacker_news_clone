@@ -1,0 +1,27 @@
+user: <%=@username%>
+<br>
+created: <%=@created_at%>
+<br>
+
+<h3>Posts</h3>
+<ol>
+  <%@posts.each do |post|%>
+    <li>
+    <a href=<%=post.url%>><%= post.title %></a>
+    </li>
+  <%end%>
+</ol>
+
+
+<h3>Comments</h3>
+<ul>
+  <%@comments.each do |comment|%>
+    <li>
+      <%= create_time_ago(comment.created_at) %> 
+      | on: <a href="/post/<%=comment.post.id%>"><%=comment.post.title%></a>
+      <br>
+      <%= comment.text %>
+    </li>
+    <br>
+  <%end%>
+</ul>

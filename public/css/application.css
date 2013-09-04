@@ -7,3 +7,28 @@
 th {
   text-align: left;
 }
+
+.navbar {
+  margin:0;
+  background-image: linear-gradient(to top, #5CA82A, #A0F06C);
+  height: 50px;
+}
+
+.navbar ul {
+  margin:0;
+  padding:15px;
+}
+
+.navbar ul li:first-child {
+  float:left;
+  position:relative;
+  list-style: none;
+  padding-left:40px;
+}
+
+.navbar ul li:last-child {
+  float:right;
+  position:relative;
+  list-style: none;
+  padding-right:40px;
+}

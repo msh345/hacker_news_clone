@@ -1,0 +1,12 @@
+title: <a href=<%=@post.url%>><%= @post_title %></a>
+
+
+
+<br>
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+  <a href='/user/<%= comment.user.id %>'><%= comment.user.username %></a>
+  <br>
+  <%= comment.text %>
+  <br>
+<% end %>
