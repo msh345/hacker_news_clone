@@ -41,4 +41,9 @@ end
 # POST ======================================
 
 post '/login' do
+  if params_has_blank?(params)
+    @error = "You left a field blank. Please try again"
+    erb :login
+  else
+    User.find_or_create_by()
 end

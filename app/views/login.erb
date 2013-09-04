@@ -1,18 +1,42 @@
-
-<form action="/login" method="POST">
-  <table border="0">
-    <tbody>
-      <tr>
-        <td>username:</td>
-        <td><input type="text" name="u" size="20" autocorrect="off" autocapitalize="off"></td>
-      </tr>
-      <tr>
-        <td>password:</td>
-        <td><input type="password" name="p" size="20"></td>
-      </tr>
-    </tbody>
-  </table>
+<body bgcolor="#ffffff" alink="#0000be" cz-shortcut-listen="true">
   <br>
-  <input type="submit" value="login">
-</form>
-
+  <br><%=@error if @error%>
+  <br>
+  <br>
+  <b>Login</b>
+  <form action="/login" method="POST">
+    <table border="0">
+      <tbody>
+        <tr>
+          <td>username:</td>
+          <td><input type="text" name="username" size="20" autocorrect="off" autocapitalize="off"></td>
+        </tr>
+        <tr>
+          <td>password:</td>
+          <td><input type="password" name="password" size="20"></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <input type="submit" value="login">
+  </form>
+  <br>
+  <br>
+  <b>Create Account</b>
+  <form action="/login" method="POST">
+    <table border="0">
+      <tbody>
+        <tr>
+          <td>username:</td>
+          <td><input type="text" name="username" size="20" autocorrect="off" autocapitalize="off"></td>
+        </tr>
+        <tr>
+          <td>password:</td>
+          <td><input type="password" name="password" size="20"></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <input type="submit" value="create account">
+  </form>
+</body>

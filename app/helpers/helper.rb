@@ -13,3 +13,7 @@ def create_time_ago(timestamp)
   end
 
 end
+
+def params_has_blank?(params)
+    params.values.any? &:empty?
+end
