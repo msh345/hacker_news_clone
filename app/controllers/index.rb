@@ -43,6 +43,19 @@ get '/logout' do
   erb :index
 end
 
+get '/submit' do
+  if session[:id] == nil
+    @error = "To submit a post, you need to login or create an account"
+    erb :login
+  else
+
+    erb :submit
+
+  end
+
+end
+
+
 
 
 # POST ======================================
@@ -65,4 +78,9 @@ post '/login' do
     session[:id] = @user.id
     redirect '/news'
   end
+end
+
+post '/submit' do
+  post = Post.create(title: params[:title], url: params[:url], user_id: session[:id])
+  redirect "/post/#{post.id}"
 end

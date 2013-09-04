@@ -19,21 +19,14 @@ th {
   padding:15px;
 }
 
-.navbar ul li:first-child {
+.navleft {
   float:left;
   position:relative;
   list-style: none;
   padding-left:40px;
 }
 
-.navbar ul li:last-child {
-  float:right;
-  position:relative;
-  list-style: none;
-  padding-right:40px;
-}
-
-.navbar ul li:last-child {
+.navright {
   float:right;
   position:relative;
   list-style: none;

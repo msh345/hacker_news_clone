@@ -1,5 +1,5 @@
 <ol>
-  <% Post.all.each do |post| %>
+  <% Post.order("created_at DESC").each do |post| %>
     <li>
       <a href=<%=post.url%>><%= post.title %></a>
       <br>

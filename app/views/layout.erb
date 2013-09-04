@@ -20,12 +20,13 @@
 <body>
   <div class="navbar">
     <ul>
-      <li><a href="/news">Home</a></li>
+      <li class="navleft"><a href="/news">Home</a></li>
+      <li class="navleft"><a href="/submit">Submit</a></li>
       <% if current_user %>      
-        <li><a href="/user/<%=current_user.id%>"></a></li>
-        <li><a href="/logout">Logout</a></li>
+        <li class="navright"><a href="/logout">Logout</a></li>
+        <li class="navright"><a href="/user/<%=current_user.id%>"><%=current_user.username%></a></li>
       <% else %>
-        <li><a href="/login">Login</a></li>
+        <li class="navright"><a href="/login">Login</a></li>
       <% end %>
     </ul>
   </div>
