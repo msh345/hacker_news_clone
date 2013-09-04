@@ -44,6 +44,16 @@ post '/login' do
   if params_has_blank?(params)
     @error = "You left a field blank. Please try again"
     erb :login
+  elsif User.find_by_username(params[:username])
+    @user = User.find_by_username(params[:username])
+    if @user.password == params[:password]
+      redirect '/news'
+    else
+      @error = "Username and password do not match"
+      erb :login
+    end
   else
-    User.find_or_create_by()
+    User.create(username: params[:username], password: params[:password])
+    redirect '/news'
+  end
 end

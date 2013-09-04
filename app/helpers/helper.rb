@@ -11,9 +11,8 @@ def create_time_ago(timestamp)
   else
     return "#{d.sec} second(s) ago"
   end
-
 end
 
 def params_has_blank?(params)
-    params.values.any? &:empty?
+  params.values.any? &:empty?
 end
