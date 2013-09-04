@@ -1,3 +1,5 @@
+enable :sessions
+
 # GET ======================================
 
 get '/' do
@@ -36,6 +38,11 @@ get '/login' do
   erb :login
 end
 
+get '/logout' do
+  session.clear
+  erb :index
+end
+
 
 
 # POST ======================================
@@ -47,13 +54,15 @@ post '/login' do
   elsif User.find_by_username(params[:username])
     @user = User.find_by_username(params[:username])
     if @user.password == params[:password]
+      session[:id] = @user.id
       redirect '/news'
     else
       @error = "Username and password do not match"
       erb :login
     end
   else
-    User.create(username: params[:username], password: params[:password])
+    @user = User.create(username: params[:username], password: params[:password])
+    session[:id] = @user.id
     redirect '/news'
   end
 end

@@ -21,9 +21,16 @@
   <div class="navbar">
     <ul>
       <li><a href="/news">Home</a></li>
-      <li><a href="/login">Login</a></li>
+      <% if current_user %>      
+        <li><a href="/user/<%=current_user.id%>"></a></li>
+        <li><a href="/logout">Logout</a></li>
+      <% else %>
+        <li><a href="/login">Login</a></li>
+      <% end %>
     </ul>
   </div>
   <%= yield %>
 </body>
 </html>
+
+

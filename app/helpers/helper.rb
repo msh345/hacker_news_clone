@@ -16,3 +16,7 @@ end
 def params_has_blank?(params)
   params.values.any? &:empty?
 end
+
+def current_user
+  @current_user ||= User.find_by_id(session[:id])
+end

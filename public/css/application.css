@@ -32,3 +32,10 @@ th {
   list-style: none;
   padding-right:40px;
 }
+
+.navbar ul li:last-child {
+  float:right;
+  position:relative;
+  list-style: none;
+  padding-right:40px;
+}
