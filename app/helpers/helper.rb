@@ -17,6 +17,14 @@ def params_has_blank?(params)
   params.values.any? &:empty?
 end
 
+def find_upvotes(post, user_id)
+  if post.post_votes.any? { |vote| vote.user_id == user_id }
+    return '<img class="arrow" src="/orange_arrow.png">'
+  else
+    return '<img class="arrow" src="/black_arrow.png">'
+  end
+end
+
 def current_user
   @current_user ||= User.find_by_id(session[:id])
 end

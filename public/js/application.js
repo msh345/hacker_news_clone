@@ -1,7 +1,13 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $(".arrow").on('click', function(){ 
+  	if ($(".navbar").data("session-id") != '') {
+  	  $(this).attr("src", "/orange_arrow.png");
+  	  var post_id = $(this).next().data("post-id");
+  	  var url = "/post/" + post_id + "/vote";
+  	  $.post(url);
+    }
+    else {
+      window.location.replace('/login');    
+    }
+  });
 });

@@ -84,3 +84,7 @@ post '/submit' do
   post = Post.create(title: params[:title], url: params[:url], user_id: session[:id])
   redirect "/post/#{post.id}"
 end
+
+post '/post/:post_id/vote' do
+  PostVote.create(post_id: params[:post_id], user_id: session[:id])
+end
